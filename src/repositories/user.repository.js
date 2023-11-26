@@ -95,7 +95,6 @@ export const findUserByEmail = async (email) => {
 
 export const receiveDeviceData = async (sensorCheck, userCheck) => {
     try {
-      console.log("3");
       const device = await prisma.device.create({
         data: {
           sensorValue: sensorCheck,
