@@ -77,10 +77,8 @@ export const login = async (req, res) => {
 
 export const receiveData = async (req, res) => {
     const { sensorValue, user } = req.body;
-    console.log("1");
 
     try {
-        console.log("2");
         // Convert sensorValue to a boolean value
         const sensorCheck = Boolean(sensorValue);
         const userCheck = user;
@@ -90,7 +88,6 @@ export const receiveData = async (req, res) => {
 
         res.status(200).send(devices);
     } catch (e) {
-        console.log("3");
         res.status(400).send(e);
     }
 };
