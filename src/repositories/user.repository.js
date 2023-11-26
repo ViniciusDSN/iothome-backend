@@ -94,7 +94,9 @@ export const findUserByEmail = async (email) => {
 }
 
 export const receiveDeviceData = async (sensorCheck, userCheck) => {
+    console.log("10");
     try {
+        console.log("11");
       const device = await prisma.device.create({
         data: {
           sensorValue: sensorCheck,
@@ -104,6 +106,7 @@ export const receiveDeviceData = async (sensorCheck, userCheck) => {
   
       return device;
     } catch (error) {
+        console.log("12");
       console.error('Prisma error:', error);
       throw error; // Rethrow the error to be caught in the calling function
     }
